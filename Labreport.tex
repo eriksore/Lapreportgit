@@ -26,7 +26,8 @@ TTM4135 Information Security\\
 \subsection{Q1}
 \paragraph{Comment on security related issues regarding the cryptographic algorithms used to
 generate and sign your groups web server certiﬁcate (key length, algorithm, etc.).}
-\paragraph{} For the web server certificate, the signature algorithm were chosen as SHA1 with RSA encryption, with a public-key length of 2048 bits. At the current time, RSA laboratories (creators of the RSA algorithm) recommends a 2048 bits key size for extremely valuable keys, and 1024 bits key size for corporate use \cite{2}.
+\paragraph{} For the web server certificate, the signature algorithm were chosen as SHA1 with RSA encryption, with a public-key length of 2048 bits. At the current time, RSA laboratories (creators of the RSA algorithm) recommends a 2048 bits key size for extremely valuable keys, and 1024 bits key size for corporate use \cite{2}. Even 768 bits key might be regarded as sufficient. The use of 2048 bits key size in this case could therefore be regarded as 'over-the-top'. Ultimately the choice of key length is a trade-off between de-/encryption speed and security.\\
+SHA1 were chosen over Md5 as message digest due to known security problems with Md5
 \subsection{Q2}
 \paragraph{Explain what you have achieved through each of these veriﬁcations. What is the name of
 the person signing the Apache release?}
