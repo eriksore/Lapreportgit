@@ -7,7 +7,7 @@
 %\addtocounter{section}{0}
 \title{Lab Project,\\Final report}
 \author{Group 5 \\Magnus Krane, Erik S\o rensen, Piyush Bajpayee}
-\date{ {\tt \{eriksore, magnkr, piyushb \}@stud.ntnu.no}\\
+\date{ {\tt \{eriksore, magnkr, piyushb\}@stud.ntnu.no}\\
 TTM4135 Information Security\\
 \today}
 \begin{document}
@@ -16,7 +16,7 @@ TTM4135 Information Security\\
 
 % Abstract
 \begin{abstract}
-
+This lab report is a term assignment in the course TTM4135 at NTNU. 
 \end{abstract}
 \section*{Introduction}
 \paragraph{}The web could be argued to be one of the most important infrastructures in the world.
@@ -27,17 +27,23 @@ TTM4135 Information Security\\
 \paragraph{Comment on security related issues regarding the cryptographic algorithms used to
 generate and sign your groups web server certiﬁcate (key length, algorithm, etc.).}
 \paragraph{} For the web server certificate, the signature algorithm were chosen as SHA1 with RSA encryption, with a public-key length of 2048 bits. At the current time, RSA laboratories (creators of the RSA algorithm) recommends a 2048 bits key size for extremely valuable keys, and 1024 bits key size for corporate use \cite{2}. Even 768 bits key might be regarded as sufficient. The use of 2048 bits key size in this case could therefore be regarded as 'over-the-top'. Ultimately the choice of key length is a trade-off between de-/encryption speed and security.\\
-SHA1 were chosen over Md5 as message digest due to known security problems with Md5
+SHA1 (160-bit hash) were chosen over Md5 (128-bit hash) as message digest due to known security problems with Md5 \cite{3}
 \subsection{Q2}
-\paragraph{Explain what you have achieved through each of these veriﬁcations. What is the name of
-the person signing the Apache release?}
+The detached PGP signature of the source code should be verified using GnuPG.
+\paragraph{Explain what you have achieved through each of these veriﬁcations. What is the name of the person signing the Apache release?}
+\paragraph{}Through these step we have identified that a "Jim Jagielski" has signed the file, but we can still not trust the file as it is not certified with a trusted signature. A check against the pgpkeys.mit.edu keyserver also shows this. In conclusion, the received public key can't be trusted. To validate the authenticity of a key (and therefore also, the integrity of the file) \cite{4} recomends a face-to-face validation with the signee. 
 \subsection{Q3}
-\paragraph{What are the access permissions to your web server’s conﬁguration ﬁles, server certiﬁcate
-and the corresponding private key? Comment on possible attacks to your web server due to
-inappropriate ﬁle permissions.}
+\paragraph{What are the access permissions to your web server’s conﬁguration ﬁles, server certiﬁcate and the corresponding private key? Comment on possible attacks to your web server due to inappropriate file permissions.}
+\paragraph{}The following access permissions have been set.
+\begin{itemize}
+	\item Configuration files: 744, -rwx r-- r--
+	\item Server certificate: 444, -r-- r-- r--
+	\item Private key: 400, -r-- --- ---
+\end{itemize}
+These permissions has been set as restrictive as possible. Especially for the certicate and key files, their persmissions have been set to read only. This is to make sure their integrity is kept. The private key has also been given read permission for owner only. It's very important to keep the confidentiality of this key. The files is also stored in folders not accesible from the Internet.
+\paragraph{}Possible attacks could be to change certificate requirements in the configuration file to gain access, or if the private key were to be accessed the whole certificate access control would be rendered useless.
 \subsection{Q4}
-\paragraph{Web servers oﬀering weak cryptography are subject to several attacks. What kind of
-attacks are feasible? How did you conﬁgure your server to prevent such attacks?}
+\paragraph{Web servers offering weak cryptography are subject to several attacks. What kind of attacks are feasible? How did you conﬁgure your server to prevent such attacks?}
 \subsection{Q5}
 \paragraph{What kind of malicious attacks is your web application (PHP) vulnerable to? Describe
 them brieﬂy, and point out what countermeasures you have developed in your code to prevent
@@ -46,8 +52,10 @@ such attacks.}
 \begin{thebibliography}{9}
 \bibitem{1}ITEM, 
 	\emph{Part 3 - Design and implementation of a resource allocation service}.
-	NTNU, 2013.  http://www.item.ntnu.no/fag/ttm4120/current/lab/lab3spread.pdf, downloaded Feb 27th 2013.
-\bibitem{2}RSA Laboratories, \emph{How large a key should be used in the RSA cryptosystem?} http://www.rsa.com/rsalabs/node.asp?id=2218, downloaded Mar 8th 2013.	
+	NTNU, 2013.  http://www.item.ntnu.no/fag/ttm4120/current/lab/lab3spread.pdf, retrieved Feb 27th 2013.
+\bibitem{2}RSA Laboratories, \emph{How large a key should be used in the RSA cryptosystem?} http://www.rsa.com/rsalabs/node.asp?id=2218, retrieved Mar 8th 2013.	
+\bibitem{3}IETF.org, \emph{Updated Security Considerations for the MD5 Message-Digest and the HMAC-MD5 Algorithms} http://tools.ietf.org/html/rfc6151, downloaded Mar 9th 2013.
+\bibitem{4} Apache.org \emph{Verifying Apache HTTP Server Releases} http://httpd.apache.org/dev/verification.html, retrieved Mar 10th 2013.
 \end{thebibliography}
 \listoffigures
 \end{document} 
