@@ -26,7 +26,7 @@ In the \emph{caconf.cnf} file the default-md and policy-match variables were cha
 \subsection{Q1}
 \paragraph{Comment on security related issues regarding the cryptographic algorithms used to
 generate and sign your groups web server certiﬁcate (key length, algorithm, etc.).}
-\paragraph{} For the web server certificate, the signature algorithm were chosen as SHA1 with RSA encryption, with a public-key length of 2048 bits. At the current time, RSA laboratories (creators of the RSA algorithm) recommends a 2048 bits key size for extremely valuable keys, and 1024 bits key size for corporate use \cite{2}. Even 768 bits key might be regarded as sufficient. The use of 2048 bits key size in this case could therefore be regarded as 'over-the-top'. Ultimately the choice of key length is a trade-off between de-/encryption speed and security.\\
+\paragraph{} For the web server certificate, the signature algorithm were chosen as SHA1 with RSA encryption, with a public-key length of 2048 bits. At the current time, RSA laboratories (creators of the RSA algorithm) recommends a 2048 bits key size for extremely valuable keys, and 1024 bits key size for corporate use \cite{2}. Even 768 bits key might be regarded as sufficient. The use of 2048 bits key size in this case could therefore be regarded as 'over-the-top'. Ultimately the choice of key length is a trade-off between de-/encryption speed (see \cite{5} page 301) and security.\\
 SHA1 (160-bit hash) were chosen over Md5 (128-bit hash) as message digest due to known security problems with Md5 \cite{3}
 \subsection{Q2}
 The detached PGP signature of the source code should be verified using GnuPG.
@@ -34,16 +34,21 @@ The detached PGP signature of the source code should be verified using GnuPG.
 \paragraph{}Through these step we have identified that a "Jim Jagielski" has signed the file, but we can still not trust the file as it is not certified with a trusted signature. A check against the pgpkeys.mit.edu keyserver also shows this. In conclusion, the received public key can't be trusted. To validate the authenticity of a key (and therefore also, the integrity of the file) \cite{4} recomends a face-to-face validation with the signee. 
 \subsection{Q3}
 \paragraph{What are the access permissions to your web servers conﬁguration files, server certiﬁcate and the corresponding private key? Comment on possible attacks to your web server due to inappropriate file permissions.}
-\paragraph{}The following access permissions have been set.
+\paragraph{}The following file permissions have been set.
 \begin{itemize}
 	\item Configuration files: 600, -rw- --- ---
 	\item Server certificate: 400, -r-- --- ---
 	\item Private key: 400, -r-- --- ---
 \end{itemize}
-These permissions has been set as restrictive as possible. Especially for the certicate and key files, their persmissions have been set to read only. This is to make sure their integrity is kept. All files have been given read/write access for owner only, i.e. you would need to be user root/gr05 to read these files. The files is also stored in folders not accesible from the Internet.
+\paragraph{} These permissions has been set as restrictive as possible. Especially for the certicate and key files, their persmissions have been set to read only. This is to make sure their integrity is kept. All files have been given read/write access for owner only, i.e. you would need to be user root/gr05 to read these files. The files is also stored in folders not accesible from the Internet.
 \paragraph{}Possible attacks could be to change certificate requirements in the configuration file to gain access, or if the private key were to be accessed the whole certificate access control would be rendered useless.
 \subsection{Q4}
 \paragraph{Web servers offering weak cryptography are subject to several attacks. What kind of attacks are feasible? How did you conﬁgure your server to prevent such attacks?}
+\begin{itemize}
+	\item \textbf{Brute force attacks} are a type of attacks were all possibilites are tried (in this case for the private key). This attack will not be feasible on our server as a key space of 2048 is regarded as safe with todays computing power and factoring algorithms \cite{5}.
+	\item \textbf{Encrypted passwords in database} 
+	\item \textbf{Password exhaustive/brute force attacks:} The cryptography protecting the server is worth nothing should an attacker gain access to the root user. This could be done through a brute force/dictionary attack against the servers password (see \cite{6} page  276 for details). If such a attack were successfull, an attacker would have full access to the whole server and database. Creating a strong password will be the best defence against such an attack.
+\end{itemize}
 \subsection{Q5}
 \paragraph{What kind of malicious attacks is your web application (PHP) vulnerable to? Describe
 them brieﬂy, and point out what countermeasures you have developed in your code to prevent
@@ -52,11 +57,12 @@ such attacks.}
 \begin{thebibliography}{9}
 \bibitem{1}ITEM, 
 	\emph{Part 3 - Design and implementation of a resource allocation service}.
-	NTNU, 2013.  http://www.item.ntnu.no/fag/ttm4120/current/lab/lab3spread.pdf, retrieved Feb 27th 2013.
-\bibitem{2}RSA Laboratories, \emph{How large a key should be used in the RSA cryptosystem?} http://www.rsa.com/rsalabs/node.asp?id=2218, retrieved Mar 8th 2013.	
-\bibitem{3}IETF.org, \emph{Updated Security Considerations for the MD5 Message-Digest and the HMAC-MD5 Algorithms} http://tools.ietf.org/html/rfc6151, downloaded Mar 9th 2013.
-\bibitem{4} Apache.org, \emph{Verifying Apache HTTP Server Releases} http://httpd.apache.org/dev/verification.html, retrieved Mar 10th 2013.
-\bibitem{5}William Stallings, \emph{Cryptography and Network Security - Principle and Practice}, fifth edition, Prentice Hall, 2011.
+	NTNU, 2013. \\http://www.item.ntnu.no/fag/ttm4120/current/lab/lab3spread.pdf, retrieved Feb 27th 2013.
+\bibitem{2}RSA Laboratories, \emph{How large a key should be used in the RSA cryptosystem?}.\\ http://www.rsa.com/rsalabs/node.asp?id=2218, retrieved Mar 8th 2013.	
+\bibitem{3}IETF.org, \emph{Updated Security Considerations for the MD5 Message-Digest and the HMAC-MD5 Algorithms}.\\ http://tools.ietf.org/html/rfc6151, downloaded Mar 9th 2013.
+\bibitem{4} Apache.org, \emph{Verifying Apache HTTP Server Releases}.\\ http://httpd.apache.org/dev/verification.html, retrieved Mar 10th 2013.
+\bibitem{5}William Stallings, \emph{Cryptography and Network Security - Principle and Practice}. Fifth edition, Prentice Hall, 2011.
+\bibitem{6}Charles P. Pfleeger, \emph{Security in Computing}. Fourth edition,Prentice Hall, 2006. 
 \end{thebibliography}
 \listoffigures
 \end{document} 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  11 MAR 2013 13:00
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  11 MAR 2013 14:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -194,25 +194,14 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 Missing character: There is no Ô in font cmbx10!
 Missing character: There is no ¨ in font cmbx10!
 Missing character: There is no Å in font cmbx10!
+ [2]
 Missing character: There is no Ô in font cmbx10!
 Missing character: There is no ¨ in font cmbx10!
 Missing character: There is no Ç in font cmbx10!
- [2]
-Underfull \hbox (badness 1783) in paragraph at lines 53--56
-\OT1/cmr/m/n/10.95 2013. http://www.item.ntnu.no/fag/ttm4120/current/lab/lab3sp
-read.pdf, re-trieved Feb
- []
 
-
-Underfull \hbox (badness 3158) in paragraph at lines 56--57
-[]\OT1/cmr/m/n/10.95 RSA Lab-o-ra-to-ries, \OT1/cmr/m/it/10.95 How large a key 
-should be used in the RSA cryp-tosys-tem?
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-[]\OT1/cmr/m/n/10.95 Apache.org, \OT1/cmr/m/it/10.95 Ver-i-fy-ing Apache HTTP S
-erver Re-leases
+Underfull \hbox (badness 3364) in paragraph at lines 58--61
+\OT1/cmr/m/n/10.95 http://www.item.ntnu.no/fag/ttm4120/current/lab/lab3spread.p
+df, re-trieved Feb 27th
  []
 
 (./Labreport.lof)
@@ -225,13 +214,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 1611 strings out of 493488
- 23145 string characters out of 3141326
- 78977 words of memory out of 3000000
- 4911 multiletter control sequences out of 15000+200000
+ 1612 strings out of 493488
+ 23148 string characters out of 3141326
+ 78980 words of memory out of 3000000
+ 4912 multiletter control sequences out of 15000+200000
  9275 words of font info for 33 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,6n,23p,602b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,6n,23p,626b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
@@ -240,7 +229,7 @@ r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
 local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
 ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/lo
 cal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Labreport.pdf (3 pages, 112395 bytes).
+Output written on Labreport.pdf (3 pages, 113797 bytes).
 PDF statistics:
  46 PDF objects out of 1000 (max. 8388607)
  32 compressed objects within 1 object stream
