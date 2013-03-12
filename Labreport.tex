@@ -29,7 +29,7 @@ In the \emph{caconf.cnf} file the default-md and policy-match variables were cha
 http://ttm4135.item.ntnu.no:8121/\\
 https://ttm4135.item.ntnu.no:8122/\\
 \\
-One part is a open HTTP page, while the other is a more secure HTTPS page. Most of the lab were done in the HTTPS environment, and follows the form and build up as described in \cite{1}.
+One part is an unsecure HTTP page, while the other is a more secure HTTPS page. Most of the lab were done in the HTTPS environment, and follows the form and build up as described in \cite{1}.
 \section{Discussion}
 \subsection{Q1}
 \paragraph{Comment on security related issues regarding the cryptographic algorithms used to
@@ -39,7 +39,6 @@ SHA1 (160-bit hash) were chosen over Md5 (128-bit hash) as message digest due to
 \subsection{Q2}
 The detached PGP signature of the source code should be verified using GnuPG.
 \paragraph{Explain what you have achieved through each of these veriﬁcations. What is the name of the person signing the Apache release?}
-\paragraph{}Through these step we have identified that a "Jim Jagielski" has signed the file, but we can still not trust the file as it is not certified with a trusted signature. A check against the pgpkeys.mit.edu keyserver also shows this. In conclusion, the received public key can't be trusted. To validate the authenticity of a key (and therefore also, the integrity of the file) \cite{4} recomends a face-to-face validation with the signee. 
 \paragraph{}Firstly the Apache release (*.qz) were checked against detached signature (*.asc). Through these step we have identified that a "Jim Jagielski" has signed the file, but we can still not trust the file as it is not certified with a trusted signature. A check against the pgpkeys.mit.edu keyserver also shows this. In conclusion, the received public key can't be trusted. To validate the authenticity of a key (and therefore also, the integrity of the file) \cite{4} recomends a face-to-face validation with the signee. This is, of course, in many situations impossible, but one could enter a so called "web of trust" were other people already have validated each other keys.  
 \subsection{Q3}
 \paragraph{What are the access permissions to your web servers conﬁguration files, server certiﬁcate and the corresponding private key? Comment on possible attacks to your web server due to inappropriate file permissions.}
@@ -52,10 +51,14 @@ The detached PGP signature of the source code should be verified using GnuPG.
 \paragraph{} These permissions has been set as restrictive as possible. Especially for the certicate and key files, their persmissions have been set to read only. This is to make sure their integrity is kept. All files have been given read/write access for owner only, i.e. you would need to be user root/gr05 to read these files. The files is also stored in folders not accesible from the Internet.
 \paragraph{}Possible attacks could be to change certificate requirements in the configuration file to gain access, or if the private key were to be accessed the whole certificate access control would be rendered useless.
 \subsection{Q4}
-\paragraph{Web servers offering weak cryptography are subject to several attacks. What kind of attacks are feasible? How did you conﬁgure your server to prevent such attacks?}
+\paragraph{Web servers offering weak cryptography are subject to several attacks. What kind of attacks are feasible? How did you configure your server to prevent such attacks?}
 \begin{itemize}
 	\item \textbf{Brute force attacks} are a type of attacks were all possibilites are tried (in this case for the private key). This attack will not be feasible on our server as a key space of 2048 is regarded as safe with todays computing power and factoring algorithms \cite{5}.
+<<<<<<< HEAD
 	\item \textbf{Encrypted passwords in database} A possible attack on the database is SQL-injection (see Q5 for description and prevention). A good way to secure the relevant data in the database, in our case the passwords, is to use encryption. If a attack on the database were succesfull, all they would see is the encrypted password. The MySQL database has encryption methods that use the official AES algoritm to encode the data with a 128-bit key length.
+=======
+	\item \textbf{Collision attacks} 
+>>>>>>> efef
 	\item \textbf{Password exhaustive/brute force attacks:} The cryptography protecting the server is worth nothing should an attacker gain access to the root user. This could be done through a brute force/dictionary attack against the servers password (see \cite{6} page  276 for details). If such a attack were successfull, an attacker would have full access to the whole server and database. Creating a strong password will be the best defence against such an attack.
 \end{itemize}
 \subsection{Q5}
@@ -63,6 +66,12 @@ The detached PGP signature of the source code should be verified using GnuPG.
 them brieﬂy, and point out what countermeasures you have developed in your code to prevent
 such attacks.}
 \paragraph{}Our application is vulnerable to Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), Session Hijacking, and SQL-Injection. XSS uses input fields on a site to upload html that includes sripts, like javascript, which loads to the page on request from other users who then reads and executes the script(\cite{8} page 734). CSRF is when the evil doers tricks a user to submit a forged HTTP request through for instance XSS.
+<<<<<<< HEAD
+=======
+\paragraph{}We are also vulnerable to SQL-Injection. This is when the developer passes user input to a back-end database without checking to see whether it contains SQL-code. This is often given away by error messages, from which the evil doer may interpret to mount a attack (\cite{8} page 120). Session Hijacking could executed when the evil doers have gotten hold of a session or session ID from another user and they act as the user.
+\paragraph{}If we look at the most critical web application security flaws \cite{7}, we can see that we didnt acount for many of them. To avoid XSS and CSRF we could have have correctly escaped the input to make sure that they are stored and displayed correctly. To avoid SQL-injection we could have used prepared statements that make sure that input is stored as plain text and not interpreted by the database as SQL-code. Countermeasures against Session Hijacking could be to make sure the user is correcly authenticated on every page, and also to protect agains XSS since it can be used to steal session IDs.
+\paragraph{}Our application is vulnerable to Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), Session Hijacking, and SQL-Injection. XSS and CSRF uses input fields on a site to upload html that includes sripts, like javascript, which loads to the page on request from other users who then reads and executes the script(\cite{8} page 734). CSRF is when the evil doers tricks a user to submit a forged HTTP request through for instance XSS.
+>>>>>>> efef
 \paragraph{}It is also vulnerable to SQL-Injection. This is when the developer passes user input to a back-end database without checking to see whether it contains SQL-code. This is often given away by error messages, from which the evil doer may interpret to mount an attack (\cite{8} page 120). Session Hijacking could be executed when the evil doers have gotten hold of a session or session ID from another user, and then act as that user.
 \paragraph{}If we look at the most critical web application security flaws \cite{7}, we can see that we didn't acount for many of them. To avoid XSS and CSRF we could have have correctly escaped the input to make sure that they are stored and displayed correctly. To avoid SQL-injection we could have used prepared statements that make sure that input is stored as plain text and not interpreted by the database as SQL-code. Countermeasures against Session Hijacking could be to make sure that the user is correcly authenticated on every page, and also to protect agains XSS since it can be used to steal session IDs.
 \section{Conclusions}

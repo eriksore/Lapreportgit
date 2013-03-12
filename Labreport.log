@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.3.10)  12 MAR 2013 19:00
 =======
 <<<<<<< HEAD
@@ -9,6 +10,9 @@ This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded for
 This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  12 MAR 2013 18:31
 >>>>>>> l
 >>>>>>> oppdatert
+=======
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  12 MAR 2013 19:01
+>>>>>>> efef
 entering extended mode
 **Labreport.tex
 (C:\Users\Darth\Documents\GitHub\Lapreportgit\Labreport.tex
@@ -162,22 +166,28 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
  [2]
 Missing character: There is no Ô in font cmbx10!
 Missing character: There is no ¨ in font cmbx10!
-Missing character: There is no Å in font cmbx10!
-Missing character: There is no Ô in font cmbx10!
-Missing character: There is no ¨ in font cmbx10!
 Missing character: There is no Ç in font cmbx10!
  [3]
+<<<<<<< HEAD
 Underfull \hbox (badness 3364) in paragraph at lines 69--72
+=======
+Underfull \hbox (badness 3364) in paragraph at lines 72--75
+>>>>>>> efef
 \OT1/cmr/m/n/10.95 http://www.item.ntnu.no/fag/ttm4120/current/lab/lab3spread.p
 df, re-trieved Feb 27th
  []
 
+<<<<<<< HEAD
 [4] (C:\Users\Darth\Documents\GitHub\Lapreportgit\Labreport.aux)
+=======
+[4] [5] (./Labreport.aux)
+>>>>>>> efef
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
+<<<<<<< HEAD
  1253 strings out of 494045
  16530 string characters out of 3148387
  69265 words of memory out of 3000000
@@ -196,6 +206,27 @@ cm/cmtt12.pfb>
 Output written on Labreport.pdf (4 pages, 124470 bytes).
 PDF statistics:
  47 PDF objects out of 1000 (max. 8388607)
+=======
+ 1611 strings out of 493488
+ 23134 string characters out of 3141326
+ 79986 words of memory out of 3000000
+ 4914 multiletter control sequences out of 15000+200000
+ 9275 words of font info for 33 fonts, out of 3000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 37i,6n,23p,720b,206s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></us
+r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/
+local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
+ocal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/lo
+cal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Labreport.pdf (5 pages, 118664 bytes).
+PDF statistics:
+ 52 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
+>>>>>>> efef
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
