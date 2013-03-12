@@ -53,6 +53,9 @@ The detached PGP signature of the source code should be verified using GnuPG.
 \paragraph{What kind of malicious attacks is your web application (PHP) vulnerable to? Describe
 them brieﬂy, and point out what countermeasures you have developed in your code to prevent
 such attacks.}
+\paragraph{}Out application is vulnerable to Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), Session Management, and SQL-Injection. XSS and CSRF uses input fields on a site to upload html that includes sripts, like javascript that the users then reads and executes (\cite{8} page 734).
+\paragraph{}We are also vulnerable to SQL-Injection. This is when the developer passes user input to a back-end database without checking to see whether it contains SQL-code. This is often given away by error messages, from which the evil doer may interpret to mount a attack (\cite{8} page 120). Session Management could executed when the evil doers have gotten a session from another user and they edit the trafic between them and the server to act as the user.
+\paragraph{}Since none of us had any experience with PHP, we did not manage to make it as secure as we would like. If we look at the most critical web application security flaws \cite{7}, we can see that we didnt acount for many of them. 
 \section*{Conclusion}
 \begin{thebibliography}{9}
 \bibitem{1}ITEM, 
@@ -62,7 +65,9 @@ such attacks.}
 \bibitem{3}IETF.org, \emph{Updated Security Considerations for the MD5 Message-Digest and the HMAC-MD5 Algorithms}.\\ http://tools.ietf.org/html/rfc6151, downloaded Mar 9th 2013.
 \bibitem{4} Apache.org, \emph{Verifying Apache HTTP Server Releases}.\\ http://httpd.apache.org/dev/verification.html, retrieved Mar 10th 2013.
 \bibitem{5}William Stallings, \emph{Cryptography and Network Security - Principle and Practice}. Fifth edition, Prentice Hall, 2011.
-\bibitem{6}Charles P. Pfleeger, \emph{Security in Computing}. Fourth edition,Prentice Hall, 2006. 
+\bibitem{6}Charles P. Pfleeger, \emph{Security in Computing}. Fourth edition,Prentice Hall, 2006.
+\bibitem{7}Owasp.org \emph{Owasp Top Ten Project}.\\ https:www.owasp.org/index.php/Category:OWASP\textunderscore Top\textunderscore Ten \textunderscore Project
+\bibitem{8}Ross Anderson \emph{Security Engineering. Second edition}, Wiley Publishing, 2008.
 \end{thebibliography}
 \listoffigures
 \end{document} 
