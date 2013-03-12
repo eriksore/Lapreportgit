@@ -13,15 +13,23 @@ TTM4135 Information Security\\
 \vspace{3cm}
 % Abstract
 \begin{abstract}
-This lab report is a term assignment in the course TTM4135 at NTNU. 
+This paper is lab report from the "Web Security Lab" which is a term assignment in the course TTM4135 at NTNU. 
 \end{abstract}
 \section{Introduction}
-\paragraph{}The web could be argued to be one of the most important infrastructures in the world.
+\paragraph{}The web could be argued to be one of the most important infrastructures in the world. E-trade, banking, governmental web pages, education, management on physical infrastructure and more are done over the Internet and on web pages.
+It's therefore of the utmost importance to keep a good enough web security on such services to ensure their integrity, availability and confidentiality. 
+\paragraph{}To give a rudimentary understanding of web security this lab is divided into four main parts: Understanding and creating certificates, access control on Apache web server, understandig Subversion Repositories and creating dynamic webpages with PHP and MySQL.
 \section{Experimental procedure}
-\paragraph{}During the experiment we followed \cite{1} point by point, therefore only questions asked in the text (other than Q-questions) and points were we changed procedure will be mentioned in this part.
+\paragraph{}During the experiment we followed \cite{1} point by point, therefore only questions asked in the text (other than Q-questions) and points where we changed procedure will be mentioned in this part.
 \paragraph{Part 1.4}The purpose of the 'echo' and 'touch' commands were to create a "database" for the certificates.\\
 In the \emph{caconf.cnf} file the default-md and policy-match variables were changed. default-md were set to SHA1, which is more secure than md5 \cite{3}, and more matches were set in policy-match. These steps were done to make the certificate more secure.
 \section{Results}
+\paragraph{}The result of this lab is shown at the following web pages:\\
+\\
+http://ttm4135.item.ntnu.no:8121/\\
+https://ttm4135.item.ntnu.no:8122/\\
+\\
+One part is a open HTTP page, while the other is a more secure HTTPS page. Most of the lab were done in the HTTPS environment, and follows the form and build up as described in \cite{1}.
 \section{Discussion}
 \subsection{Q1}
 \paragraph{Comment on security related issues regarding the cryptographic algorithms used to
