@@ -13,12 +13,12 @@ TTM4135 Information Security\\
 \vspace{3cm}
 % Abstract
 \begin{abstract}
-This paper is lab report from the "Web Security Lab" which is a term assignment in the course TTM4135 at NTNU. 
+This paper is a lab report from the "Web Security Lab" which is a term assignment in the course TTM4135 at NTNU. 
 \end{abstract}
 \section{Introduction}
 \paragraph{}The web could be argued to be one of the most important infrastructures in the world. E-trade, banking, governmental web pages, education, management on physical infrastructure and more are done over the Internet and on web pages.
 It's therefore of the utmost importance to keep a good enough web security on such services to ensure their integrity, availability and confidentiality. 
-\paragraph{}To give a rudimentary understanding of web security this lab is divided into four main parts: Understanding and creating certificates, access control on Apache web server, understandig Subversion Repositories and creating dynamic webpages with PHP and MySQL.
+\paragraph{}To give a rudimentary understanding of web security this lab is divided into four main parts: Understanding and creating certificates, access control on an Apache web server, understandig Subversion Repositories and creating dynamic webpages with PHP and MySQL.
 \section{Experimental procedure}
 \paragraph{}During the experiment we followed \cite{1} point by point, therefore only questions asked in the text (other than Q-questions) and points where we changed procedure will be mentioned in this part.
 \paragraph{Part 1.4}The purpose of the 'echo' and 'touch' commands were to create a "database" for the certificates.\\
@@ -62,8 +62,8 @@ The detached PGP signature of the source code should be verified using GnuPG.
 them brieﬂy, and point out what countermeasures you have developed in your code to prevent
 such attacks.}
 \paragraph{}Our application is vulnerable to Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), Session Hijacking, and SQL-Injection. XSS and CSRF uses input fields on a site to upload html that includes sripts, like javascript, which loads to the page on request from other users who then reads and executes the script(\cite{8} page 734).
-\paragraph{}We are also vulnerable to SQL-Injection. This is when the developer passes user input to a back-end database without checking to see whether it contains SQL-code. This is often given away by error messages, from which the evil doer may interpret to mount a attack (\cite{8} page 120). Session Hijacking could executed when the evil doers have gotten hold of a session or session ID from another user and they act as the user.
-\paragraph{}If we look at the most critical web application security flaws \cite{7}, we can see that we didnt acount for many of them. To avoid XSS and CSRF we could have have correctly escaped the input to make sure that they are stored and displayed correctly. To avoid SQL-injection we could have used prepared statements that make sure that input is stored as plain text and not interpreted by the database as SQL-code. Countermeasures against Session Hijacking could be to make sure the user is correcly authenticated on every page, and also to protect agains XSS since it can be used to steal session IDs.
+\paragraph{}It is also vulnerable to SQL-Injection. This is when the developer passes user input to a back-end database without checking to see whether it contains SQL-code. This is often given away by error messages, from which the evil doer may interpret to mount an attack (\cite{8} page 120). Session Hijacking could be executed when the evil doers have gotten hold of a session or session ID from another user, and then act as that user.
+\paragraph{}If we look at the most critical web application security flaws \cite{7}, we can see that we didn't acount for many of them. To avoid XSS and CSRF we could have have correctly escaped the input to make sure that they are stored and displayed correctly. To avoid SQL-injection we could have used prepared statements that make sure that input is stored as plain text and not interpreted by the database as SQL-code. Countermeasures against Session Hijacking could be to make sure that the user is correcly authenticated on every page, and also to protect agains XSS since it can be used to steal session IDs.
 \section*{Conclusion}
 \begin{thebibliography}{9}
 \bibitem{1}ITEM, 
