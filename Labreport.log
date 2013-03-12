@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.3.10)  12 MAR 2013 18:27
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.3.10)  12 MAR 2013 18:32
 entering extended mode
 **Labreport.tex
 (C:\Users\Darth\Documents\GitHub\Lapreportgit\Labreport.tex
@@ -157,14 +157,14 @@ Missing character: There is no ï in font cmbx10!
 Missing character: There is no ¬ in font cmbx10!
 Missing character: There is no ‚ in font cmbx10!
  [3]
-Underfull \hbox (badness 3364) in paragraph at lines 75--78
+Underfull \hbox (badness 3364) in paragraph at lines 70--73
 \OT1/cmr/m/n/10.95 http://www.item.ntnu.no/fag/ttm4120/current/lab/lab3spread.p
 df, re-trieved Feb 27th
  []
 
-[4] (C:\Users\Darth\Documents\GitHub\Lapreportgit\Labreport.lof)
+(C:\Users\Darth\Documents\GitHub\Lapreportgit\Labreport.lof)
 \tf@lof=\write3
- [5]
+ [4]
 (C:\Users\Darth\Documents\GitHub\Lapreportgit\Labreport.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -177,7 +177,7 @@ Here is how much of TeX's memory you used:
  4574 multiletter control sequences out of 15000+200000
  9275 words of font info for 33 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,6n,19p,652b,204s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,6n,19p,652b,199s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
@@ -186,9 +186,9 @@ ts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
 msfonts/cm/cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmtt12.pfb>
-Output written on Labreport.pdf (5 pages, 126443 bytes).
+Output written on Labreport.pdf (4 pages, 124969 bytes).
 PDF statistics:
- 50 PDF objects out of 1000 (max. 8388607)
+ 47 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
