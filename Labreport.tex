@@ -30,6 +30,7 @@ http://ttm4135.item.ntnu.no:8121/\\
 https://ttm4135.item.ntnu.no:8122/\\
 \\
 One part is an unsecure HTTP page, while the other is a more secure HTTPS page. Most of the lab were done in the HTTPS environment, and follows the form and build up as described in \cite{1}.
+\paragraph{}The certificate for the group and group members have been added to the NTNU trust hierarchy.
 \section{Discussion}
 \subsection{Q1}
 \paragraph{Comment on security related issues regarding the cryptographic algorithms used to
@@ -54,11 +55,7 @@ The detached PGP signature of the source code should be verified using GnuPG.
 \paragraph{Web servers offering weak cryptography are subject to several attacks. What kind of attacks are feasible? How did you configure your server to prevent such attacks?}
 \begin{itemize}
 	\item \textbf{Brute force attacks} are a type of attacks were all possibilites are tried (in this case for the private key). This attack will not be feasible on our server as a key space of 2048 is regarded as safe with todays computing power and factoring algorithms \cite{5}.
-<<<<<<< HEAD
-	\item \textbf{Encrypted passwords in database} A possible attack on the database is SQL-injection (see Q5 for description and prevention). A good way to secure the relevant data in the database, in our case the passwords, is to use encryption. If a attack on the database were succesfull, all they would see is the encrypted password. The MySQL database has encryption methods that use the official AES algoritm to encode the data with a 128-bit key length.
-=======
-	\item \textbf{Collision attacks} 
->>>>>>> efef
+	\item \textbf{Non-encrypted passwords in database} A possible attack on the database is SQL-injection (see Q5 for description and prevention). A good way to secure the relevant data in the database, in our case the passwords, is to use encryption. If a attack on the database were succesfull, all they would see is the encrypted password. The MySQL database has encryption methods that use the official AES algoritm to encode the data with a 128-bit key length.
 	\item \textbf{Password exhaustive/brute force attacks:} The cryptography protecting the server is worth nothing should an attacker gain access to the root user. This could be done through a brute force/dictionary attack against the servers password (see \cite{6} page  276 for details). If such a attack were successfull, an attacker would have full access to the whole server and database. Creating a strong password will be the best defence against such an attack.
 \end{itemize}
 \subsection{Q5}
@@ -66,15 +63,10 @@ The detached PGP signature of the source code should be verified using GnuPG.
 them brieﬂy, and point out what countermeasures you have developed in your code to prevent
 such attacks.}
 \paragraph{}Our application is vulnerable to Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), Session Hijacking, and SQL-Injection. XSS uses input fields on a site to upload html that includes sripts, like javascript, which loads to the page on request from other users who then reads and executes the script(\cite{8} page 734). CSRF is when the evil doers tricks a user to submit a forged HTTP request through for instance XSS.
-<<<<<<< HEAD
-=======
 \paragraph{}We are also vulnerable to SQL-Injection. This is when the developer passes user input to a back-end database without checking to see whether it contains SQL-code. This is often given away by error messages, from which the evil doer may interpret to mount a attack (\cite{8} page 120). Session Hijacking could executed when the evil doers have gotten hold of a session or session ID from another user and they act as the user.
 \paragraph{}If we look at the most critical web application security flaws \cite{7}, we can see that we didnt acount for many of them. To avoid XSS and CSRF we could have have correctly escaped the input to make sure that they are stored and displayed correctly. To avoid SQL-injection we could have used prepared statements that make sure that input is stored as plain text and not interpreted by the database as SQL-code. Countermeasures against Session Hijacking could be to make sure the user is correcly authenticated on every page, and also to protect agains XSS since it can be used to steal session IDs.
-\paragraph{}Our application is vulnerable to Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), Session Hijacking, and SQL-Injection. XSS and CSRF uses input fields on a site to upload html that includes sripts, like javascript, which loads to the page on request from other users who then reads and executes the script(\cite{8} page 734). CSRF is when the evil doers tricks a user to submit a forged HTTP request through for instance XSS.
->>>>>>> efef
-\paragraph{}It is also vulnerable to SQL-Injection. This is when the developer passes user input to a back-end database without checking to see whether it contains SQL-code. This is often given away by error messages, from which the evil doer may interpret to mount an attack (\cite{8} page 120). Session Hijacking could be executed when the evil doers have gotten hold of a session or session ID from another user, and then act as that user.
-\paragraph{}If we look at the most critical web application security flaws \cite{7}, we can see that we didn't acount for many of them. To avoid XSS and CSRF we could have have correctly escaped the input to make sure that they are stored and displayed correctly. To avoid SQL-injection we could have used prepared statements that make sure that input is stored as plain text and not interpreted by the database as SQL-code. Countermeasures against Session Hijacking could be to make sure that the user is correcly authenticated on every page, and also to protect agains XSS since it can be used to steal session IDs.
 \section{Conclusions}
+\paragraph{}During the course of the lab, a number of different web pages have been created. These have been secured either through the use of certificates and/or passwords. The work and security analysis of these pages have shown strength and weaknesses, and thus given a good overview over the basics of web security.\\
 \begin{thebibliography}{9}
 \bibitem{1}ITEM, 
 	\emph{Web Security Lab}. Version from Feb 27th 2013, NTNU, 2013. 
@@ -83,7 +75,7 @@ such attacks.}
 \bibitem{4} Apache.org, \emph{Verifying Apache HTTP Server Releases}.\\ http://httpd.apache.org/dev/verification.html, retrieved Mar 10th 2013.
 \bibitem{5}William Stallings, \emph{Cryptography and Network Security - Principle and Practice}. Fifth edition, Prentice Hall, 2011.
 \bibitem{6}Charles P. Pfleeger, \emph{Security in Computing}. Fourth edition,Prentice Hall, 2006.
-\bibitem{7}Owasp.org \emph{Owasp Top Ten Project}.\\ https:www.owasp.org/index.php/Category:OWASP\textunderscore Top\textunderscore Ten \textunderscore Project
+\bibitem{7}Owasp.org \emph{Owasp Top Ten Project}.\\ https://www.owasp.org/index.php/Category:OWASP\textunderscore Top\textunderscore Ten \textunderscore Project
 \bibitem{8}Ross Anderson \emph{Security Engineering. Second edition}, Wiley Publishing, 2008.
 \end{thebibliography}
 \end{document} 
